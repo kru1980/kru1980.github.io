@@ -7,11 +7,11 @@ $(function () {
 		});
 	};
 
-	$("#formPopup").submit(function () { //Change
+	$("#myForm").submit(function () { //Change
 		console.log('re');
 		var th = $(this);
 		$.ajax({
-			type: "GET",
+			type: "POST",
 			url: "/mail.php", //Change
 			data: th.serialize()
 		}).done(function () {
