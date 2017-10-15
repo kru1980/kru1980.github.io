@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="ru">
+<!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Форма обратной связи</title>
+	<meta name="description" content="">
+
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="libs/animate/animate.css">
+	<link rel="stylesheet" href="libs\magnific-popup\dist\magnific-popup.css">
+
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
+
+	<script src="libs/modernizr/modernizr.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Здесь пишем код -->
+	<!-- <a href="#myForm" class="open-popup-link">Показать всплывающее окно</a> -->
+	<button id="popup">Показать всплывающее окно</button>
+
+	<form method="post" id="myForm" class="white-popup mfp-hide">
+		<!-- Hidden Required Fiels -->
+		<input type="hidden" name="project_name" value="Shato">
+		<input type="hidden" name="admin_email" value="kru1980@bk.ru">
+		<input type="hidden" name="form_subject" value="Заявка от калькулятора">
+		<!-- End Hidden Required Fiels -->
+
+		<label for="formName">enter your name</label>
+		<br>
+		<input type="text" name="formName" id="formName" pattern="^[А-Яа-яЁё\s]+$" required placeholder="Иван">
+		<br>
+		<label for="formPhone">enter phone number</label>
+		<br>
+		<input type="tel" name="formPhone" id="formPhone" pattern="8[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" placeholder="8xxxxxxxxxx" required>
+		<br>
+		<label> Your sex?
+			<input type="radio" name="sex" id="" value="boy" required>boy
+			<input type="radio" name="sex" id="" value="girl" required>girl
+		</label>
+		<br>
+		<button type="submit">send</button>
+	</form>
+	<div class="hidden">
+	</div>
+
+	<div class="loader">
+		<div class="loader_inner"></div>
+	</div>
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+	<script src="libs/jquery/jquery-1.11.2.min.js"></script>
+	<script src="libs/waypoints/waypoints.min.js"></script>
+	<script src="libs/animate/animate-css.js"></script>
+	<script src="libs/plugins-scroll/plugins-scroll.js"></script>
+	<script src="libs\magnific-popup\dist\jquery.magnific-popup.js"></script>
+
+	<script src="js/common.js"></script>
+	<script>
+		$('#popup').magnificPopup({
+			items: {
+				src: '#myForm',
+				type: 'inline'
+			}
+		  });
+		  
+	</script>
+
+</body>
+
+</html>
