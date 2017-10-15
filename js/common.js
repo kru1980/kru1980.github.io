@@ -24,15 +24,15 @@ $(function () {
 	});
 
 	// magnific
-	$('.open-popup-link').magnificPopup({
-		type: 'inline',
-		midClick: true,
-		preloader: true,
-		closeBtnInside: true,
-		focus: '#formName',
-		removalDelay: 300
+	// $('.open-popup-link').magnificPopup({
+	// 	type: 'inline',
+	// 	midClick: true,
+	// 	preloader: true,
+	// 	closeBtnInside: true,
+	// 	focus: '#formName',
+	// 	removalDelay: 300
 
-	});
+	// });
 
 	//Chrome Smooth Scroll
 	try {
