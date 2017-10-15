@@ -8,7 +8,6 @@ $(function () {
 	};
 
 	$("#myForm").submit(function () { //Change
-		console.log('re');
 		var th = $(this);
 		$.ajax({
 			type: "POST",
