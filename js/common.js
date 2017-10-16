@@ -1,5 +1,11 @@
 $(function () {
 
+	$('.first-popup-link, .second-popup-link, .third-popup-link').magnificPopup({
+
+	});
+
+
+
 	//SVG Fallback
 	if (!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function () {
@@ -7,7 +13,10 @@ $(function () {
 		});
 	};
 
-	$("#myForm").submit(function () { //Change
+	//E-mail Ajax Send
+	//Documentation & Example: https://github.com/agragregra/uniMail
+	$("#formPopup").submit(function () { //Change
+		console.log('re')
 		var th = $(this);
 		$.ajax({
 			type: "POST",
@@ -22,17 +31,6 @@ $(function () {
 		});
 		return false;
 	});
-
-	// magnific
-	// $('.open-popup-link').magnificPopup({
-	// 	type: 'inline',
-	// 	midClick: true,
-	// 	preloader: true,
-	// 	closeBtnInside: true,
-	// 	focus: '#formName',
-	// 	removalDelay: 300
-
-	// });
 
 	//Chrome Smooth Scroll
 	try {
