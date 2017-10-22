@@ -1,0 +1,29 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-about--icon__seo {
+    width: 37px;
+    height: 36px;
+    background-position: -5px -5px;
+}
+
+.sprite-about-icon__graphic {
+    width: 31px;
+    height: 45px;
+    background-position: -5px -51px;
+}
+
+.sprite-about-icon__online {
+    width: 36px;
+    height: 36px;
+    background-position: -5px -106px;
+}
+
+.sprite-about-icon__web {
+    width: 41px;
+    height: 41px;
+    background-position: -5px -152px;
+}

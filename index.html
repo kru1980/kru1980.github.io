@@ -1,142 +1,452 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="ru">
-<!--<![endif]-->
-
-<head>
-
-	<meta charset="utf-8">
-
-	<title>Popup</title>
-	<meta name="description" content="">
-
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="libs/animate/animate.css">
-	<link rel="stylesheet" href="libs/Magnific-Popup-master/dist/magnific-popup.css">
-
-	<link rel="stylesheet" href="css/fonts.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/media.css">
-
-	<script src="libs/modernizr/modernizr.js"></script>
-
-</head>
-
-<body>
-
-
-	<div class="linkFormPupop">
-
-		<a href="#first-popup" class="first-popup-link">Калькулятор</a>
-		<!-- <button id="btn" class="first-popup-link">popup</button> -->
-
-	</div>
-
-
-
-	<!-- Здесь пишем код -->
-
-	<div class="hidden">
-		<form id="formPopup" class="mfp-hide white-popup">
-			<!-- Hidden Required Fiels -->
-			<input type="hidden" name="project_name" value="Shato">
-			<input type="hidden" name="admin_email" value="kru1980@bk.ru">
-			<input type="hidden" name="form_subject" value="Заявка от калькулятора">
-			<!-- End Hidden Required Fiels -->
-			<!-- Contents of first window -->
-			<div id="first-popup" class="mfp-hide white-popup">
-				<div class="formPupop-wraper">
-					<div class="formPopup_arrow">
-						Шаг: 1 из 3
-					</div>
-					<div class="formPopup-label__inputs">
-						<label>Какой площади Вам нужен участок, соток?
-							<br>
-							<input id="landArea" type="radio" name="landArea"  value="6-8">6 - 8
-							<input type="radio" name="landArea"  value="8-10">8 - 10
-							<input type="radio" name="landArea"  value="10-15">10 - 15
-							<input type="radio" name="landArea"  value="more 15">более 15
-						</label>
-					</div>
-					<div class="formPopup-link">
-						<a href="#second-popup" class="second-popup-link">Следующий шаг</a>
-					</div>
-				</div>
-			</div>
-			<!-- Contents of second window -->
-			<div id="second-popup" class="mfp-hide white-popup">
-				<div class="formPupop-wraper">
-					<div class="formPopup_arrow">
-						Шаг: 2 из 3
-					</div>
-					<div class="formPopup-label">
-						<label>Какой ландшафт участка Вы предпочитаете?
-
-							<div class="formPopup-label__inputs">
-								<input type="radio" name="typeArea"  value="На опушке">На опушке
-								<input type="radio" name="typeArea"  value="На лугу">На лугу
-								<input type="radio" name="typeArea"  value="У озера">У озера
-								<input type="radio" name="typeArea"  value="В чаще леса">В чаще леса
-							</div>
-						</label>
-					</div>
-					<div class="formPopup-link">
-						<a href="#first-popup" class="first-popup-link">Предыдущий</a>
-						<a href="#third-popup" class="third-popup-link">Следующий</a>
-					</div>
-				</div>
-			</div>
-			<!-- Contents of third window -->
-			<div id="third-popup" class="mfp-hide white-popup">
-				<div class="formPupop-wraper">
-					<div class="formPopup_arrow">
-						Шаг: 3 из 3
-					</div>
-					<div class="formPopup-label">
-						<div class="formPopup-label__inputs">
-							<label for="pupopPhone">Введите ваш номер</label>
-							<input type="tel" name="pupopPhone" id="pupopPhone" autofocus required 
-							     placeholder=" 8(XXX)-XXX-XX-XX ">
-						</div>
-					</div>
-					<div class="formPopup-button ">
-						<button type="submit ">Отправить</button>
-					</div>
-				</div>
-			</div>
-		</form>
-	</div>
-
-	<div class="loader ">
-		<div class="loader_inner "></div>
-	</div>
-
-	<!--[if lt IE 9]>
-	<script src="libs/html5shiv/es5-shim.min.js "></script>
-	<script src="libs/html5shiv/html5shiv.min.js "></script>
-	<script src="libs/html5shiv/html5shiv-printshiv.min.js "></script>
-	<script src="libs/respond/respond.min.js "></script>
-	<![endif]-->
-
-	<script src="libs/jquery/jquery-1.11.2.min.js "></script>
-	<script src="libs/waypoints/waypoints.min.js "></script>
-	<script src="libs/animate/animate-css.js "></script>
-	<script src="libs/plugins-scroll/plugins-scroll.js "></script>
-	<script src="libs/Magnific-Popup-master/dist/jquery.magnific-popup.js "></script>
-
-	<script src="js/common.js "></script>
-
-</body>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="vendor/animate.css/animate.min.css"/>
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <title>Resume+bootstrap_grid</title>
+  </head>
+  <body>
+    <section class="slider">
+      <div class="container1600">
+        <div class="bs-docs-section clearfix">
+          <div class="row">
+            <div class="hidden-xs col-md-15">
+              <div class="bs-component">
+                <div id="myCarousel" data-ride="carousel" class="carousel slide">
+                  <!-- Indicators-->
+                  <ol class="carousel-indicators carousel-indicators--slider-top">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                  </ol>
+                  <div role="listbox" class="carousel-inner">
+                    <div class="item active"><img src="img/slider-top.jpg" alt="First slide" class="first-slide">
+                      <div class="container">
+                        <div class="carousel-caption carousel-caption--slider-top">
+                          <h1 class="slider__title slider__title--slider-top">Web & Graphic Designer</h1><a href="#" role="button" class="btn btn--grey">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item"><img src="img/slider-top.jpg" alt="Second slide" class="second-slide">
+                      <div class="container">
+                        <div class="carousel-caption carousel-caption--slider-top">
+                          <h1 class="slider__title slider__title--slider-top">Web & Graphic Designer</h1><a href="#" role="button" class="btn btn--grey">Learn more</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item"><img src="img/slider-top.jpg" alt="Third slide" class="second-third">
+                      <div class="container">
+                        <div class="carousel-caption carousel-caption--slider-top">
+                          <h1 class="slider__title slider__title--slider-top">Web & Graphic Designer</h1><a href="#" role="button" class="btn btn--grey">Learn more</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div><a href="#myCarousel" role="button" data-slide="prev" class="left carousel-control"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span><span class="sr-only">Previous</span></a><a href="#myCarousel" role="button" data-slide="next" class="right carousel-control"><span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span><span class="sr-only">Next</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <header class="header">
+      <div class="container1600">
+        <nav id="nav" class="navbar navbar-default navbar-example">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display-->
+            <div class="navbar-header">
+              <button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" class="navbar-toggle collapsed"><i class="fa fa-bars fa--white"></i></button><a href="index.html" class="navbar-brand"><img src="img/logo.png" width="152" height="42"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling-->
+            <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#home" class="nav-link">Home<span class="sr-only">(current)</span></a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#resume" class="nav-link">Resume</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact Me</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section id="home" class="hobbi">
+      <div class="container">
+        <div class="row">
+          <div class="hobbi-items">
+            <div class="col-sm-5 col-md-5">
+              <div data-wow-duration="1s" data-wow-delay="0.5s" data-wow-iteration="1" class="hobbi-item wow zoomInLeft">
+                <h2 class="hobbi-item__title">Values</h2>
+                <p class="hobbi-item__text">Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+              </div>
+            </div>
+            <div class="col-sm-5 col-md-5">
+              <div data-wow-duration="1s" data-wow-delay="0.5s" data-wow-iteration="1" class="hobbi-item wow zoomInUp">
+                <h2 class="hobbi-item__title">Goals</h2>
+                <p class="hobbi-item__text">Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+              </div>
+            </div>
+            <div class="col-sm-5 col-md-5">
+              <div data-wow-duration="1s" data-wow-delay="0.5s" data-wow-iteration="1" class="hobbi-item wow zoomInRight">
+                <h2 class="hobbi-item__title">Hobbies</h2>
+                <p class="hobbi-item__text">Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="container1600">
+        <div class="about">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-15 col-md-7 col-lg-5">
+                <div class="about-img__wrap">
+                  <div class="about-img"><img src="img/about-bg--small.jpg" height="757" width="613"></div>
+                </div>
+              </div>
+              <div class="col-sm-15 col-md-8 col-lg-9 col-lg-offset-1">
+                <div class="about-descr">
+                  <h2 data-wow-duration="1s" data-wow-offset="50" data-wow-iteration="1" class="about-descr__title wow lightSpeedIn">About me</h2>
+                  <p class="about-descr__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri.</p>
+                  <p class="about-descr__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei.</p>
+                </div>
+                <div class="about-items">
+                  <div class="row">
+                    <div class="col-sm-7 col-lg-7">
+                      <div class="about-item about-item--web">
+                        <h3 class="about-item__title">Web Design</h3>
+                        <p class="about-item__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.</p>
+                      </div>
+                      <div class="about-item about-item--online">
+                        <h3 class="about-item__title">Online Marketing</h3>
+                        <p class="about-item__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.</p>
+                      </div>
+                    </div>
+                    <div class="col-sm-8 col-lg-8">
+                      <div class="about-item about-item--graphic">
+                        <h3 class="about-item__title">Graphic Design</h3>
+                        <p class="about-item__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.</p>
+                      </div>
+                      <div class="about-item about-item--seo">
+                        <h3 class="about-item__title">SEO</h3>
+                        <p class="about-item__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="skills-descr">
+              <h2 data-wow-duration="1.5s" data-wow-offset="50" data-wow-delay="0.5s" data-wow-iteration="1" class="skills-descr__title wow lightSpeedIn">Skills</h2>
+              <p class="skills-descr__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri.</p>
+              <p class="skills-descr__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+              <div class="skills-descr__button"><a href="#" class="btn btn--green">Contact me</a></div>
+            </div>
+          </div>
+          <div class="col-md-7 col-md-offset-1">
+            <div class="skills-loadings">
+              <div class="skills-loading">
+                <h3 class="skills-loading__title">Photoshop</h3>
+                <div class="progress">
+                  <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;" class="progress-bar">90%</div>
+                </div>
+              </div>
+              <div class="skills-loading">
+                <h3 class="skills-loading__title">Illustrator</h3>
+                <div class="progress">
+                  <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;" class="progress-bar">80%</div>
+                </div>
+              </div>
+              <div class="skills-loading">
+                <h3 class="skills-loading__title">Html / css</h3>
+                <div class="progress">
+                  <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;" class="progress-bar">90%</div>
+                </div>
+              </div>
+              <div class="skills-loading">
+                <h3 class="skills-loading__title">Php / Mysql</h3>
+                <div class="progress">
+                  <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;" class="progress-bar">70%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container1600">
+        <div id="resume" class="resume">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-15 text-center">
+                <div class="resume-block">
+                  <h2 class="resume-block__title">Resume</h2>
+                  <p class="resume-block__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri.</p><a class="btn btn--green">Download Resume</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div id="testimonials" class="education">
+          <div class="row">
+            <div class="col-md-15">
+              <h2 data-wow-duration="1s" data-wow-offset="50" data-wow-iteration="1" class="education__title wow lightSpeedIn">My Education</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-7">
+              <p class="education__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri.</p>
+              <p class="education__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+            </div>
+            <div class="col-sm-7 offset-sm-7">
+              <div class="education-items">
+                <div class="education-item">
+                  <h3 data-wow-duration="4s" data-wow-offset="50" data-wow-delay="0.5s" data-wow-iteration="3" class="education-item__title wow flash">Graphic Design Diploma</h3>
+                  <p class="education-item__data">Reeves College  /  June 2008 - May 2010</p>
+                  <div class="education-item__block green-block">4.0 GPA</div>
+                  <hr>
+                  <p class="education-item__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei.</p>
+                </div>
+                <div class="education-item">
+                  <h3 data-wow-duration="4s" data-wow-offset="50" data-wow-delay="0.5s" data-wow-iteration="3" class="education-item__title wow flash">CIT Diploma</h3>
+                  <p class="education-item__data">Lethbridge College  /  June 2006 - May 2008</p>
+                  <div class="education-item__block green-block">4.0 GPA</div>
+                  <hr>
+                  <p class="education-item__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="work">
+          <div class="row">
+            <div class="col-md-15">
+              <h2 data-wow-duration="1.0s" data-wow-offset="50" data-wow-iteration="1" class="work__title wow lightSpeedIn">Work Experience</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-7">
+              <p class="work__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri.</p>
+              <p class="work__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+            </div>
+            <div class="col-sm-7 offset-sm-7">
+              <div class="work-items">
+                <div class="work-item">
+                  <h3 data-wow-duration="4s" data-wow-offset="50" data-wow-delay="0.5s" data-wow-iteration="3" class="work-item__title wow flash">Lead WEb Designer</h3>
+                  <p class="work-item__data">ABC Company, Saskatoon  /  June 2011 - Present</p>
+                  <div class="work-item__block green-block">3 Years</div>
+                  <hr>
+                  <p class="education-item__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei.</p>
+                </div>
+                <div class="work-item">
+                  <h3 data-wow-duration="4s" data-wow-offset="50" data-wow-delay="0.5s" data-wow-iteration="3" class="education-item__title wow flash">Junior Designer</h3>
+                  <p class="education-item__data">XYZ Company, Lethbridge  /  June 2008 - May 2009</p>
+                  <div class="work-item__block green-block">1 Years</div>
+                  <hr>
+                  <p class="work-item__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei.</p>
+                </div>
+                <div class="work-item">
+                  <h3 data-wow-duration="4s" data-wow-offset="50" data-wow-delay="0.5s" data-wow-iteration="3" class="education-item__title wow flash">Web Developer</h3>
+                  <p class="education-item__data">The Company, Lethbridge  /  June 2007 - May 2008</p>
+                  <div class="work-item__block green-block">1 Years</div>
+                  <hr>
+                  <p class="work-item__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container1600">
+      <div class="bs-docs-section clearfix">
+        <div class="row">
+          <div class="hidden-xs hidden-sm col-md-15">
+            <div class="bs-component">
+              <div id="myCarousel--work" data-ride="carousel" class="carousel slide">
+                <!-- Indicators-->
+                <ol class="carousel-indicators carousel-indicators--work">
+                  <li data-target="#myCarousel--work" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel--work" data-slide-to="1"></li>
+                  <li data-target="#myCarousel--work" data-slide-to="2"></li>
+                </ol>
+                <div role="listbox" class="carousel-inner">
+                  <div class="item active"><img src="img/slider-work.jpg" alt="First slide" class="first-slide">
+                    <div class="container">
+                      <div class="carousel-caption carousel-caption--work">
+                        <p class="slider__text slider__text--work">“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
+                        <h4 class="slider__title slider__title--work"> John Stone</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item"><img src="img/slider-work.jpg" alt="Second slide" class="second-slide">
+                    <div class="container">
+                      <div class="carousel-caption carousel-caption--work">
+                        <p class="slider__text slider__text--work">“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
+                        <h4 class="slider__title slider__title--work"> John Stone</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item"><img src="img/slider-work.jpg" alt="Third slide" class="second-third">
+                    <div class="container">
+                      <div class="carousel-caption carousel-caption--work">
+                        <p class="slider__text slider__text--work">“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
+                        <h4 class="slider__title slider__title--work"> John Stone</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-15 text-center">
+            <div class="portfolio-decsr">
+              <h2 data-wow-duration="1s" data-wow-offset="50" data-wow-delay="0.5s" data-wow-iteration="2" class="portfolio-decsr__title wow tada">Portfolio</h2>
+              <p class="portfolio-decsr__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="portfolio-items">
+            <div class="col-xs-7 offset-sm-1 col-sm-7 col-md-5">
+              <div class="portfolio-item"><a href="#" class="portfolio-item__link"><span class="portfolio-item__hover"><i aria-hidden="true" class="fa fa-search"></i></span><img src="img/portfolio-icon__1.jpg" class="portfolio-item__img"></a></div>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-5">
+              <div class="portfolio-item"><a href="#" class="portfolio-item__link"><span class="portfolio-item__hover"><i aria-hidden="true" class="fa fa-search"></i></span><img src="img/portfolio-icon__2.jpg" class="portfolio-item__img"></a></div>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-5">
+              <div class="portfolio-item"><a href="#" class="portfolio-item__link"><span class="portfolio-item__hover"><i aria-hidden="true" class="fa fa-search"></i></span><img src="img/portfolio-icon__3.jpg" class="portfolio-item__img"></a></div>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-5">
+              <div class="portfolio-item"><a href="#" class="portfolio-item__link"><span class="portfolio-item__hover"><i aria-hidden="true" class="fa fa-search"></i></span><img src="img/portfolio-icon__4.jpg" class="portfolio-item__img"></a></div>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-5">
+              <div class="portfolio-item"><a href="#" class="portfolio-item__link"><span class="portfolio-item__hover"><i aria-hidden="true" class="fa fa-search"></i></span><img src="img/portfolio-icon__5.jpg" class="portfolio-item__img"></a></div>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-5">
+              <div class="portfolio-item"><a href="#" class="portfolio-item__link"><span class="portfolio-item__hover"><i aria-hidden="true" class="fa fa-search"></i></span><img src="img/portfolio-icon__6.jpg" class="portfolio-item__img"></a></div>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-5">
+              <div class="portfolio-item"><a href="#" class="portfolio-item__link"><span class="portfolio-item__hover"><i aria-hidden="true" class="fa fa-search"></i></span><img src="img/portfolio-icon__7.jpg" class="portfolio-item__img"></a></div>
+            </div>
+            <div class="col-xs-7 col-sm-7 col-md-5">
+              <div class="portfolio-item"><a href="#" class="portfolio-item__link"><span class="portfolio-item__hover"><i aria-hidden="true" class="fa fa-search"></i></span><img src="img/portfolio-icon__8.jpg" class="portfolio-item__img"></a></div>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-5">
+              <div class="portfolio-item"><a href="#" class="portfolio-item__link"><span class="portfolio-item__hover"><i aria-hidden="true" class="fa fa-search"></i></span><img src="img/portfolio-icon__9.jpg" class="portfolio-item__img"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container1600">
+        <div id="contact" class="contact">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-15">
+                <h2 class="contact__title">Contact me</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">
+                <div class="contact-descr">
+                  <p class="contact__text">Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat.<br>Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei.Vel dicam vivendo accusata ei.</p>
+                  <div class="contact__address">
+                    <p class="contact__address-text">122 33rd Street East<br>  Saskatoon, SK<br>  S7K 1R9<br><br><br></p>
+                    <p class="contact__address-text"><span class="contact__address-span"> Email:</span><a href="mailto:#" class="contact__address-span-link">info@focal.com</a><br><br><span class="contact__address-span"> Phone:</span><span class="contact__address-span--phone">1-306-222-2323</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7 col-md-offset-1">
+                <div class="contact-form">
+                  <form id="form" class="contact-form">
+                    <div data-wow-duration="2s" data-wow-delay="0.5s" data-wow-iteration="2" class="form-group wow pulse">
+                      <label for="exampleInputName1" autofocus required>Name*</label>
+                      <input id="exampleInputName1" type="text" name="name" required placeholder="name" class="form-control">
+                    </div>
+                    <div data-wow-duration="2s" data-wow-delay="1.5s" data-wow-iteration="2" class="form-group wow pulse">
+                      <label for="exampleInputEmail1">Email Address*</label>
+                      <input id="exampleInputEmail1" type="email" name="email" placeholder="email" class="form-control">
+                    </div>
+                    <div data-wow-duration="2s" data-wow-delay="2.5s" data-wow-iteration="2" class="form-group wow pulse">
+                      <label for="exampleInputText1">Email Address*</label>
+                      <textarea id="exampleInputText1" name="text" rows="17" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--black">Contact me</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container1600">
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-15 text-center">
+                <div class="footer-descr">
+                  <h4 class="footer-descr__title">Copyright 2014 Focal - Built With Passion</h4>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-15">
+                <div class="footer-social__items">
+                  <div class="footer-social__item"><a href="#" class="footer-social__item-link"><span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-color"></i></span></a></div>
+                  <div class="footer-social__item"><a href="#" class="footer-social__item-link"><span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-color"></i></span></a></div>
+                  <div class="footer-social__item"><a href="#" class="footer-social__item-link"><span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-pinterest fa-stack-1x fa-color"></i></span></a></div>
+                  <div class="footer-social__item"><a href="#" class="footer-social__item-link"><span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x fa-color"></i></span></a></div>
+                  <div class="footer-social__item"><a href="#" class="footer-social__item-link"><span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-dribbble fa-stack-1x fa-color"></i></span></a></div>
+                  <div class="footer-social__item"><a href="#" class="footer-social__item-link"><span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x fa-color"></i></span></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-2x fa-arrow-circle-up"></i></span></div>
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/PageScroll2id/PageScroll2id.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="vendor/wow/dist/wow.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
